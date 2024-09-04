@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             auth.createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     // Registered successfully
-                    alert("Registered Successfully!");
+                    alert("Registered Successfully!!!");
                     const user = userCredential.user;
                     // You can add more actions here
                 })
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             auth.signInWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     // Login successful
-                    alert("Login Successful!");
+                    alert("Login Successful!!!");
                     const user = userCredential.user;
                     // You can add more actions here
                 })
