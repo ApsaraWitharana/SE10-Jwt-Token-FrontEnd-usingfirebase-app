@@ -1,6 +1,5 @@
 
 
-
 // Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDjF7s7L3wBrD1Ms_Rt9M0FHG2NWGEB8IY",
@@ -12,7 +11,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase app
-firebase.initializeApp(firebaseConfig);
+ firebase.initializeApp(firebaseConfig);
 
 // Get Authentication instance
 const auth = firebase.auth();
@@ -26,6 +25,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             auth.createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
+                    window.location.href = "../dashboard.html";
                     // Registered successfully
                     alert("Registered Successfully!!!");
                     const user = userCredential.user;

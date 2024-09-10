@@ -1,14 +1,8 @@
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js";
-import { firebaseConfig } from "/js/auth";
+
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-auth.languageCode = 'en';
+const auth = getAuth();
 const provider = new GoogleAuthProvider();
-
-
 
 document.getElementById('google-btn').addEventListener('click', () => {
     signInWithPopup(auth, provider)
@@ -16,7 +10,7 @@ document.getElementById('google-btn').addEventListener('click', () => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             let user = result.user;
             alert(`${user.displayName}, Credentials: ${credential}`);
-            window.location.href = "../dashboard.html"; // Redirect after login
+            window.location.href = "../dashboard.html";
         })
         .catch((error) => {
             const errorCode = error.code;

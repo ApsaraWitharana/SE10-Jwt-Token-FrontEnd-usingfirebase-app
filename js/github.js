@@ -1,13 +1,8 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js";
 import { getAuth, GithubAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js";
-import { firebaseConfig } from "/js/auth";
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-auth.languageCode = 'en';
+const auth = getAuth();
 const provider = new GithubAuthProvider();
-
 
 document.getElementById('github-btn').addEventListener('click', () => {
     signInWithPopup(auth, provider)
