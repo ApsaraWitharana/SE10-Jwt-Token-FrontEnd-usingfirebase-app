@@ -5,13 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <style>
      .container {
          margin-top: 50px;
          padding: 20px;
+
+     }
+     /* Basic reset for the button */
+     button {
+         border: none;
+         cursor: pointer;
+         padding: 10px 20px;
+         font-size: 16px;
+         color: #fff;
+         border-radius: 5px;
+         align-items: center;
+         gap: 10px; /* Space between icon and text */
+         text-align: center;
      }
 
+     #google-btn {
+         background-color: #4285F4; /* Google blue */
+     }
+
+     #github-btn {
+         background-color: #333; /* GitHub black */
+     }
+
+     /* Style for icons inside buttons */
+     button i {
+         font-size: 20px; /* Adjust icon size */
+     }
+
+     /* Hover effects */
+     #google-btn:hover {
+         background-color: #357AE8;
+     }
+
+     #github-btn:hover {
+         background-color: #444;
+     }
+
+     /*//*/
+     .btn {
+         width: 100%;
+         padding: 15px;
+         font-size: 1.25em;
+         font-weight: 500;
+         color: #fff;
+         background: #041764;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         transition: background-color 0.3s ease, transform 0.3s ease;
+     }
+     .btn:hover {
+         background: #082b6e;
+         transform: translateY(-3px);
+     }
+
+     .login .group a:nth-child(2) {
+         text-decoration: underline;
+     }
+     .group span{
+         color: #fcfbfb;
+     }
+     .social-login {
+         margin: 20px 0;
+         text-align: center;
+     }
+
+     .social-login button {
+         background-color:  #ff6f91;
+         color: white;
+         border: none;
+         padding: 10px 20px;
+         margin: 5px;
+         cursor: pointer;
+         border-radius: 5px;
+         font-size: 16px;
+         display: inline-block;
+     }
+
+     .github-btn {
+         background-color: #333;
+     }
+
+     .github-btn:hover, .google-btn:hover {
+         opacity: 0.8;
+     }
 </style>
 <body>
 <div class="container">
@@ -35,6 +120,10 @@
                         <div class="mt-3 text-center">
                             <a href="signup.html">Create an Account</a>
                         </div>
+                        <div class="social-login">
+                            <button id="google-btn"><i class="fab fa-google"></i></button>
+                            <button id="github-btn"><i class="fab fa-github"></i></button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -46,5 +135,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 <!--<script src="js/jquery-3.7.1.min.js"></script>-->
 <script src="./js/auth.js"></script>
+<script src ="./js/google.js" defer type="module"></script>
+<script src ="./js/github.js" defer type="module"></script>
 </body>
 </html>
